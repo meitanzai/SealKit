@@ -10,21 +10,13 @@ public abstract class Seal {
     /**
      * 默认从10x10的位置开始画，防止左上部分画布装不下
      */
-    protected final static int INIT_BEGIN = 10;
+    protected final static int INIT_BEGIN = 5;
 
     protected static void save(BufferedImage bi, String fullPath) throws IOException {
         ImageIO.write(bi, "png", new File(fullPath));
     }
 
-    public static Circle circle() {
-        return new Circle();
-    }
-
-    public static Words words() {
-        return new Words();
-    }
-
-    protected static class Circle {
+    public static class Circle {
         private Integer lineSize;
         private Integer width;
         private Integer height;
@@ -57,7 +49,7 @@ public abstract class Seal {
         }
     }
 
-    protected static class Words {
+    public static class Words {
 
         private String fontText;
         private Boolean isBold = true;
